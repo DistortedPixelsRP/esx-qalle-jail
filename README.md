@@ -1,6 +1,6 @@
 # esx-qalle-jail
 
-##[INFO]
+## [INFO]
 
 * Updated to latest ESX (https://github.com/ESX-Org/es_extended/commit/35a726685e81c7e74d13e05d6f9b8e4d5f9bea23)
 * Anti Combat Log
@@ -11,7 +11,7 @@
 
 *This is a script made for you that wan't something out of the ordinary, this is a jail script that will add some cool side effects of getting jailed, one of em is that when you get jailed you will be teleported to the charactermugshot creation, and an sheriff ped will take a photo of you. The other thing is that you can work for a small amount of cash while in jail.*
 
-##[EXTRAS]
+## Extras
 
 * Add To Police Menu Example ->
 
@@ -34,18 +34,18 @@
         if data.current.value == 'citizen_interaction' then
 ```
 
-##[USAGE]
+## Commands
 
 * `/jail ID jailTime(minutes) "description"` command (only players who have the job "police")
 * `/unjail ID` to unjail a player (only players who have the job "police")
 * `/jailmenu` quick command if you dont want the menu. (only players who have the job "police")
 
-##[REQUIREMENTS]
+## Requirements
   
 * ESX Support
   * esx_policejob => https://github.com/ESX-Org/esx_policejob
   
-##[INSTALLATION]
+## Instalation
 
 1) CD in your resources/[esx] folder
 
@@ -56,7 +56,7 @@
 4) Add this in your server.cfg :
 ``start esx-qalle-jail``
 
-##[SCREENSHOTS]
+## Showcase
 
 [Jail Menu](https://gyazo.com/7f46b8a80c59e02c4af7a96de34c9e6c)
 
