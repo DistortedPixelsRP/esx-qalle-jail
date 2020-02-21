@@ -57,9 +57,3 @@
 
 4) Add this in your server.cfg :
 ``start esx-qalle-jail``
-
-## Showcase
-
-[Jail Menu](https://gyazo.com/7f46b8a80c59e02c4af7a96de34c9e6c)
-
-[UnJail Menu](https://gyazo.com/aa065a6c748c0d2850d3d38d33eb666f)
