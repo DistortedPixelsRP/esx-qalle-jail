@@ -2,9 +2,7 @@ ESX                = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-RegisterCommand("jail", function(src, args, raw)
-
-	local xPlayer = ESX.GetPlayerFromId(src)
+ESX.RegisterCommand('jail', 'user', function(xPlayer, args, showError)
 
 	if xPlayer["job"]["name"] == "police" then
 
@@ -33,9 +31,13 @@ RegisterCommand("jail", function(src, args, raw)
 	else
 		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
 	end
-end)
+end, true, {help = 'Jail a player', validate = true, arguments = {
+	{name = 'player', help = 'player id', type = 'player'},
+	{name = 'time', help = 'jail time in minutes', type = 'number'},
+	{name = 'reason', help = 'jail reason', type = 'string'},
+}})
 
-RegisterCommand("unjail", function(src, args)
+ESX.RegisterCommand('unjail', 'user', function(xPlayer, args, showError)
 
 	local xPlayer = ESX.GetPlayerFromId(src)
 
@@ -51,20 +53,28 @@ RegisterCommand("unjail", function(src, args)
 	else
 		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
 	end
-end)
+end, true, {help = 'Unjail a player', validate = true, arguments = {
+	{name = 'player', help = 'player id', type = 'player'}
+}})
 
 RegisterServerEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(targetSrc, jailTime, jailReason)
 	local src = source
+	local xPlayer = ESX.GetPlayerFromId(src)
 	local targetSrc = tonumber(targetSrc)
 
-	JailPlayer(targetSrc, jailTime)
+	if xPlayer["job"]["name"] == "police" then
 
-	GetRPName(targetSrc, function(Firstname, Lastname)
-		TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. jailReason }, color = { 249, 166, 0 } })
-	end)
+		JailPlayer(targetSrc, jailTime)
 
-	TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Jailed for " .. jailTime .. " minutes!")
+		GetRPName(targetSrc, function(Firstname, Lastname)
+			TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. jailReason }, color = { 249, 166, 0 } })
+		end)
+
+		TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Jailed for " .. jailTime .. " minutes!")
+	else
+		xPlayer.kick("😈 Protector: Nice try hacker!")
+	end
 end)
 
 RegisterServerEvent("esx-qalle-jail:unJailPlayer")
