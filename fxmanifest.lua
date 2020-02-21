@@ -1,10 +1,8 @@
---	esx-qalle-jail
---		2018
---		Carl "Qalle"
---		2018
---	esx-qalle-jail
+fx_version 'adamant'
 
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+game 'gta5'
+
+version '2.0.0'
 
 description "Jail Script With Working Job"
 
@@ -19,3 +17,5 @@ client_scripts {
 	"client/utils.lua",
 	"client/client.lua"
 }
+
+dependency 'es_extended'
