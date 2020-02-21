@@ -1,6 +1,8 @@
+[![Logo Image](https://image.flaticon.com/icons/svg/2561/2561952.svg)](https://github.com/fivem-ex/esx-qalle-jail/)
+
 # esx-qalle-jail
 
-## [INFO]
+## Features
 
 * Updated to latest ESX (https://github.com/ESX-Org/es_extended/commit/35a726685e81c7e74d13e05d6f9b8e4d5f9bea23)
 * Anti Combat Log
