@@ -34,7 +34,7 @@ ESX.RegisterCommand('jail', 'user', function(xPlayer, args, showError)
 end, true, {help = 'Jail a player', validate = true, arguments = {
 	{name = 'player', help = 'player id', type = 'player'},
 	{name = 'time', help = 'jail time in minutes', type = 'number'},
-	{name = 'reason', help = 'jail reason', type = 'string'},
+	{name = 'reason', help = 'jail reason', type = 'string'}, -- Spaces not working for now.
 }})
 
 ESX.RegisterCommand('unjail', 'user', function(xPlayer, args, showError)
