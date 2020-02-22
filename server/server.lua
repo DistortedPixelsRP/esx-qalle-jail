@@ -39,7 +39,7 @@ end, true, {help = 'Jail a player', validate = true, arguments = {
 
 ESX.RegisterCommand('unjail', 'user', function(xPlayer, args, showError)
 
-	local xPlayer = ESX.GetPlayerFromId(src)
+	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer["job"]["name"] == "police" then
 
